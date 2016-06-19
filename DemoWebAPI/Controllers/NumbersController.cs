@@ -18,17 +18,19 @@ namespace DemoWebAPI.Controllers
             _numbers = new NumbersServices();
         }
 
-        [HttpPost]
-        [Route("api/sum/{nums}")]
-        public int GetSum(Numbers nums)
+        [HttpGet]
+        [Route("api/sum")]
+        public int GetSum()
         {
+            var nums = _numbers.GenerateRandomNumbers();
             return _numbers.SumNumbers(nums);
         }
 
-        [HttpPost]
-        [Route("api/largest/{nums}")]
-        public int FindLargestNumber(Numbers nums)
+        [HttpGet]
+        [Route("api/largest")]
+        public int FindLargestNumber()
         {
+            var nums = _numbers.GenerateRandomNumbers();
             return _numbers.FindLargest(nums);
         }
     }

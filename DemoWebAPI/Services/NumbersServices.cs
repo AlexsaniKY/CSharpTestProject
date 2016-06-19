@@ -34,5 +34,16 @@ namespace DemoWebAPI.Services
         {
             return num.OrderByDescending(i => i).FirstOrDefault();
         }
+
+        public Numbers GenerateRandomNumbers()
+        {
+            var nums = new Numbers();
+
+            for (var i = 0; i < 20; i++){
+                nums.Add(new Random().Next(1, 100));
+            }
+
+            return nums;
+        }
     }
 }
