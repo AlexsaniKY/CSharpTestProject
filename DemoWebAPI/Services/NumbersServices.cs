@@ -8,8 +8,8 @@ namespace DemoWebAPI.Services
 {
     /// <summary>
     /// This is what we call a services layer, it's ordinarily part of a service/repository pattern
-    /// but as that we are not storing any data we are simply recieving and returning data, we will simply
-    /// have a servicess layer
+    /// but as that we are not storing any data we are simply receiving and returning data, we will simply
+    /// have a services layer
     /// </summary>
     public class NumbersServices
     {
@@ -33,6 +33,16 @@ namespace DemoWebAPI.Services
         public int FindLargest(Numbers num)
         {
             return num.OrderByDescending(i => i).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// FindSmallest returns the smallest value in the list
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public int FindSmallest(Numbers num)
+        {
+            return num.Min();
         }
 
         public Numbers GenerateRandomNumbers()
