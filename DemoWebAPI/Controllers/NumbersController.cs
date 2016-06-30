@@ -33,5 +33,14 @@ namespace DemoWebAPI.Controllers
             var nums = _numbers.GenerateRandomNumbers();
             return _numbers.FindLargest(nums);
         }
+
+
+        [HttpGet]
+        [Route("api/smallest")]
+        public int FindSmallestNumber()
+        {
+            var nums = _numbers.GenerateRandomNumbers();
+            return _numbers.FindSmallest(nums);
+        }
     }
 }

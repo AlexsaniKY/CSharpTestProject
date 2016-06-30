@@ -8,7 +8,7 @@
 $(document).ready(function () {
 
     //Another jQuery method, which creates an event handler for us
-    //when the element with the CSS ID of Sum (we know it's ID and not class because of #)
+    //when the element with the CSS ID of Sum (we know its ID and not class because of #)
     // SEE CSS SELECTORS it will execute the enclosed anonymous function
     //this is called an anonymous function because we do not name it.
     $('#sum').click(function () {
@@ -38,4 +38,14 @@ $(document).ready(function () {
             }
         });
     });
+
+    $('#smallestNum').click(function () {
+        $.ajax({
+            url: '/api/smallest',
+            cache: false,
+            success: function (response) {
+                $('#response').text(response);
+            }
+        });
+    })
 });
