@@ -1,0 +1,9 @@
+﻿@model DemoWebAPI.Models.User
+
+@ViewBag.Title
+
+<div class="question">
+    @Html.EditorFor(Model => Model.Name)
+</div>
+<hr />
+@Html.ActionLink("Answer", "HelloName", Model.Name, new { @class = "btn btn-primary" })
