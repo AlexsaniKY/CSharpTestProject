@@ -9,6 +9,7 @@ namespace DemoWebAPI.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
@@ -16,20 +17,20 @@ namespace DemoWebAPI.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult Question() {
+        //[HttpGet]
+        //public ActionResult Question() {
 
-            ViewBag.Title = "Who are you so we can say Hello World?";
+        //    ViewBag.Title = "Who are you so we can say Hello World?";
 
-            return View();
-        }
+        //    return View();
+        //}
 
-        [HttpPost]
-        public ActionResult HelloName(string currentName) { 
+        //[HttpPost]
+        //public ActionResult HelloName(string currentName) { 
 
-            User current = new User(currentName);
+        //    User current = new User(currentName);
 
-            return View(current);
-        }
+        //    return View(current);
+        //}
     }
 }
