@@ -20,27 +20,32 @@ namespace DemoWebAPI.Controllers
 
         [HttpGet]
         [Route("api/sum")]
-        public int GetSum()
+        public long Sum([FromUri] int[] list)
         {
-            var nums = _numbers.GenerateRandomNumbers();
-            return _numbers.SumNumbers(nums);
+            return list.Sum();
+            //return nums.Sum();
         }
 
         [HttpGet]
         [Route("api/largest")]
-        public int FindLargestNumber()
+        public int FindLargestNumber([FromUri]int[] list)
         {
-            var nums = _numbers.GenerateRandomNumbers();
-            return _numbers.FindLargest(nums);
+            return list.Max();
         }
 
 
         [HttpGet]
         [Route("api/smallest")]
-        public int FindSmallestNumber()
+        public int FindSmallestNumber([FromUri]int[] list)
         {
-            var nums = _numbers.GenerateRandomNumbers();
-            return _numbers.FindSmallest(nums);
+            return list.Min();
+        }
+
+        [HttpGet]
+        [Route("api/randoms")]
+        public Numbers GenerateRandoms([FromUri] int total)
+        {
+            return _numbers.GenerateRandomNumbers(total);
         }
     }
 }

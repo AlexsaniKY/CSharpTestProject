@@ -5,6 +5,9 @@
         <hr />
         <p>Simply press either button and it will generate a list of numbers,
          submit it to the API, and then the bottom will render the result.</p>
+        <div class="btn btn-danger" id="populaterandoms">
+            Get a set of Random Numbers from Server
+        </div>
         <div class="btn btn-success" id="sum">
             Get Sum of Numbers
         </div>
@@ -16,7 +19,18 @@
         </div>
     </div>
     <hr />
+    <div>
+        <h3>
+            Input Values
+        </h3>
+        <div id="values" class="well" ></div>
+        <div> 
+            <input type="number" id="val" class="input-lg"/>
+            <div id="inputVal" class="btn btn-success">Enter Number</div>
+        </div>
+        <p></p>
+    </div>
     <h3>Response</h3>
-    <div class="well" id="response"></div>
+    <div class="well" id="response" ></div>
     <hr />
 </div>

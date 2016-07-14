@@ -45,12 +45,13 @@ namespace DemoWebAPI.Services
             return num.Min();
         }
 
-        public Numbers GenerateRandomNumbers()
+        public Numbers GenerateRandomNumbers(int total)
         {
             var nums = new Numbers();
+            var rand = new Random();
 
-            for (var i = 0; i < 20; i++){
-                nums.Add(new Random().Next(1, 100));
+            for (var i = 0; i < total; i++){
+                nums.Add(rand.Next(1, 100));
             }
 
             return nums;
